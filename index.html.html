@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanmoy & Aparna — Paka Katha & Aashirbaad · 18 June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Tiro+Bangla:ital@0;1&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sindoor: #C0392B;
+    --sindoor-deep: #8B1A1A;
+    --gold: #C9942A;
+    --gold-light: #E8C96D;
+    --gold-pale: #FDF3DC;
+    --cream: #FBF6EE;
+    --text-dark: #2C1A0E;
+    --text-mid: #6B4226;
+    --text-muted: #A0805F;
+    --white: #FFFFFF;
+    --border-gold: rgba(201,148,42,0.35);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem 5rem;
+    overflow: hidden;
+    background: #1a0808;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(139,26,26,0.93) 0%, rgba(44,26,14,0.90) 100%);
+    z-index: 0;
+  }
+
+  /* Alpona SVG corners */
+  .alpona { position: absolute; width: 200px; height: 200px; opacity: 0.20; z-index: 1; pointer-events: none; }
+  .alpona.tl { top: 0; left: 0; }
+  .alpona.tr { top: 0; right: 0; transform: scaleX(-1); }
+  .alpona.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+  .alpona.br { bottom: 0; right: 0; transform: scale(-1,-1); }
+
+  /* Top & bottom gold border strips */
+  .hero-strip {
+    position: absolute;
+    left: 0; right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 18px, transparent 18px, transparent 26px);
+    opacity: 0.45;
+    z-index: 2;
+  }
+  .hero-strip.top { top: 0; }
+  .hero-strip.bottom { bottom: 56px; }
+
+  .hero-inner { position: relative; z-index: 3; max-width: 720px; }
+
+  .shankha-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; margin-bottom: 1.4rem;
+  }
+  .shankha-divider .line { height: 1px; width: 70px; background: var(--gold-light); opacity: 0.5; }
+  .shankha-divider .sym { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+
+  .eyebrow {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 0.95rem;
+    color: var(--gold-light);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .hero-names {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 9vw, 6.2rem);
+    color: var(--white);
+    line-height: 1.05;
+    font-weight: 400;
+  }
+  .hero-names em { font-style: italic; color: var(--gold-light); }
+  .hero-names .amp {
+    display: block;
+    font-size: 0.5em;
+    color: var(--gold-light);
+    font-style: italic;
+    margin: 0.12em 0;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-bengali {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 1.35rem;
+    color: var(--gold-pale);
+    margin-top: 0.7rem;
+    opacity: 0.7;
+    font-style: italic;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 2.2rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    border: 1px solid rgba(232,201,109,0.4);
+    border-radius: 40px;
+    padding: 0.45rem 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(232,201,109,0.75);
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .badge strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-transform: none;
+    margin-top: 1px;
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  .section { position: relative; z-index: 1; padding: 4.5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.45rem; font-weight: 400; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 400; color: var(--sindoor-deep); line-height: 1.2; margin-bottom: 0.3rem; }
+  .section-bengali { font-family: 'Tiro Bangla', serif; font-size: 1rem; color: var(--text-muted); margin-bottom: 0; font-style: italic; }
+  .gold-rule { width: 48px; height: 2px; background: var(--gold); margin: 1rem 0 2.2rem; border-radius: 2px; }
+
+  /* ─── STORY ─── */
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .story-text p { font-size: 1rem; line-height: 1.9; color: var(--text-mid); margin-bottom: 1rem; font-weight: 300; }
+  .bengali-verse {
+    font-family: 'Tiro Bangla', serif; font-size: 1.05rem; color: var(--sindoor);
+    line-height: 2.1; border-left: 2.5px solid var(--gold); padding-left: 1.1rem;
+    margin: 1.5rem 0; font-style: italic;
+  }
+  .story-motif { text-align: center; }
+  .motif-svg { width: 210px; height: 210px; }
+
+  /* ─── PAKA KATHA HIGHLIGHT ─── */
+  .paka-katha-band {
+    background: var(--sindoor-deep);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .paka-katha-band .pk-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold-light); opacity: 0.65; margin-bottom: 0.6rem;
+  }
+  .paka-katha-band h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.3rem);
+    font-weight: 400; color: var(--white); margin-bottom: 0.3rem;
+  }
+  .paka-katha-band .pk-bengali {
+    font-family: 'Tiro Bangla', serif; font-size: 1.05rem;
+    color: rgba(253,243,220,0.55); font-style: italic; margin-bottom: 1.5rem;
+  }
+  .pk-cards {
+    display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+    max-width: 860px; margin: 0 auto;
+  }
+  .pk-card {
+    border: 1px solid rgba(201,148,42,0.3); border-radius: 8px;
+    padding: 1.4rem 1.8rem; text-align: center; min-width: 180px; max-width: 220px;
+    background: rgba(139,26,26,0.25);
+  }
+  .pk-card .pk-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .pk-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 1rem;
+    font-weight: 400; color: var(--gold-light); margin-bottom: 0.2rem;
+  }
+  .pk-card .pk-sub { font-family: 'Tiro Bangla', serif; font-size: 0.8rem; color: rgba(253,243,220,0.4); font-style: italic; margin-bottom: 0.5rem; }
+  .pk-card p { font-size: 0.8rem; color: rgba(253,243,220,0.55); line-height: 1.6; font-weight: 300; }
+
+  /* ─── TIMELINE / RITUALS ─── */
+  .tl-wrap { background: linear-gradient(135deg, #FDF3DC 0%, #FBF6EE 100%); }
+  .timeline { position: relative; padding-left: 2.2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 9px; top: 8px; bottom: 8px;
+    width: 1px; background: linear-gradient(180deg, var(--gold) 0%, rgba(201,148,42,0.1) 100%);
+  }
+  .timeline-item { position: relative; margin-bottom: 2.3rem; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -2.2rem; top: 7px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--cream); box-shadow: 0 0 0 1px var(--gold);
+  }
+  .timeline-item h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 400; color: var(--sindoor-deep); margin-bottom: 0.15rem; }
+  .timeline-item .tl-bengali { font-family: 'Tiro Bangla', serif; font-size: 0.83rem; color: var(--gold); margin-bottom: 0.35rem; }
+  .timeline-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.68; font-weight: 300; }
+  .tl-current .timeline-item.active::before { background: var(--sindoor); box-shadow: 0 0 0 3px rgba(192,57,43,0.25); }
+  .timeline-item.active h4 { color: var(--sindoor); }
+
+  /* ─── GALLERY ─── */
+  .gallery-section { background: var(--sindoor-deep); padding: 4.5rem 2rem 7rem; }
+  .gallery-section .section-label { color: rgba(232,201,109,0.65); }
+  .gallery-section .section-title { color: var(--gold-pale); }
+  .gallery-section .section-bengali { color: rgba(253,243,220,0.45); }
+  .gallery-section .gold-rule { background: var(--gold-light); opacity: 0.4; }
+  .gallery-inner { max-width: 1100px; margin: 0 auto; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 14px;
+    margin-top: 2rem;
+  }
+
+  .gallery-card {
+    position: relative; border-radius: 6px; overflow: hidden;
+    aspect-ratio: 4/3; cursor: pointer;
+    border: 1px solid rgba(201,148,42,0.18);
+    background: rgba(139,26,26,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-card:hover { transform: translateY(-4px) scale(1.015); box-shadow: 0 14px 36px rgba(0,0,0,0.45); }
+  .gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery-card .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(44,26,14,0.7) 0%, transparent 55%);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 0.9rem;
+  }
+  .gallery-card:hover .overlay { opacity: 1; }
+  .gallery-card .overlay span { font-size: 0.72rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* loading skeleton */
+  .gallery-card.loading { animation: shimmer 1.4s infinite; }
+  @keyframes shimmer {
+    0%   { background: rgba(139,26,26,0.20); }
+    50%  { background: rgba(201,148,42,0.12); }
+    100% { background: rgba(139,26,26,0.20); }
+  }
+
+  /* empty state */
+  .gallery-empty {
+    grid-column: 1/-1; text-align: center; padding: 3rem 1rem;
+    color: rgba(253,243,220,0.25); font-size: 0.85rem; letter-spacing: 0.08em;
+    border: 1.5px dashed rgba(201,148,42,0.2); border-radius: 8px;
+  }
+
+  /* ─── LIGHTBOX ─── */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 300;
+    background: rgba(15,5,2,0.96); align-items: center; justify-content: center; padding: 1rem;
+  }
+  .lightbox.open { display: flex; }
+  .lb-img-wrap { position: relative; max-width: 88vw; max-height: 84vh; }
+  .lightbox img { max-width: 88vw; max-height: 84vh; object-fit: contain; border-radius: 4px; border: 1px solid rgba(201,148,42,0.22); display: block; transition: opacity 0.22s ease; }
+  .lightbox img.fading { opacity: 0; }
+  .lb-close { position: fixed; top: 1.1rem; right: 1.4rem; background: none; border: none; color: var(--gold-light); font-size: 1.8rem; cursor: pointer; opacity: 0.65; transition: opacity 0.2s; z-index: 10; }
+  .lb-close:hover { opacity: 1; }
+  .lb-nav { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(44,26,14,0.7); border: 1px solid var(--border-gold); color: var(--gold-light); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.4rem; transition: background 0.2s; }
+  .lb-nav:hover { background: rgba(201,148,42,0.18); }
+  .lb-nav.prev { left: 0.8rem; }
+  .lb-nav.next { right: 0.8rem; }
+  .lb-counter { position: fixed; bottom: 1.2rem; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: rgba(232,201,109,0.5); letter-spacing: 0.15em; }
+
+  /* ─── MUSIC BAR ─── */
+  .music-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(34,14,8,0.97); border-top: 1px solid var(--border-gold);
+    padding: 0.65rem 1.4rem; display: flex; align-items: center; gap: 1rem;
+    backdrop-filter: blur(10px);
+  }
+  .play-btn {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1.5px solid var(--gold); background: transparent;
+    color: var(--gold-light); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.95rem; flex-shrink: 0; transition: background 0.2s;
+  }
+  .play-btn:hover { background: rgba(201,148,42,0.15); }
+  .music-info { flex: 1; min-width: 0; }
+  .music-title { font-size: 0.78rem; color: var(--gold-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .music-sub { font-size: 0.66rem; color: rgba(255,255,255,0.3); margin-top: 1px; }
+  .music-progress { flex: 1; min-width: 60px; max-width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+  .music-progress-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.5s linear; border-radius: 2px; }
+  audio { display: none; }
+
+  /* ─── FOOTER ─── */
+  .footer { background: var(--text-dark); text-align: center; padding: 3rem 2rem 6rem; }
+  .footer-names { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: var(--gold-light); opacity: 0.65; margin-bottom: 0.4rem; }
+  .footer-bengali { font-family: 'Tiro Bangla', serif; font-size: 0.95rem; color: rgba(253,243,220,0.28); margin-bottom: 0.8rem; }
+  .footer p { font-size: 0.75rem; color: rgba(253,243,220,0.3); letter-spacing: 0.08em; line-height: 1.8; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 660px) {
+    .story-grid { grid-template-columns: 1fr; }
+    .story-motif { display: none; }
+    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+    .pk-cards { gap: 1rem; }
+    .lb-nav.prev { left: 0.3rem; }
+    .lb-nav.next { right: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-strip top"></div>
+  <div class="hero-strip bottom"></div>
+
+  <!-- Alpona corners (shared SVG, duplicated for 4 corners) -->
+  <svg class="alpona tl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 L200 0 L200 9 Q100 22 0 9Z" fill="#E8C96D"/>
+    <path d="M0 0 L0 200 L9 200 Q22 100 9 0Z" fill="#E8C96D"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(-45 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(0 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(45 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(90 36 36)" opacity="0.7"/>
+    <circle cx="36" cy="36" r="4" fill="#C9942A" opacity="0.55"/>
+    <path d="M65 8 Q80 25 65 42 Q82 30 88 12" stroke="#E8C96D" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <path d="M8 65 Q25 80 42 65 Q30 82 12 88" stroke="#E8C96D" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <polygon points="55,18 60,24 55,30 50,24" fill="#C9942A" opacity="0.4"/>
+    <polygon points="18,55 24,60 18,65 12,60" fill="#C9942A" opacity="0.4"/>
+    <polygon points="78,78 83,84 78,90 73,84" fill="#C9942A" opacity="0.3"/>
+    <circle cx="90" cy="12" r="2.5" fill="#E8C96D" opacity="0.45"/>
+    <circle cx="12" cy="90" r="2.5" fill="#E8C96D" opacity="0.45"/>
+    <path d="M100 5 Q110 22 100 38" stroke="#E8C96D" stroke-width="0.6" fill="none" opacity="0.35"/>
+    <path d="M5 100 Q22 110 38 100" stroke="#E8C96D" stroke-width="0.6" fill="none" opacity="0.35"/>
+  </svg>
+  <svg class="alpona tr" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 L200 0 L200 9 Q100 22 0 9Z" fill="#E8C96D"/>
+    <path d="M0 0 L0 200 L9 200 Q22 100 9 0Z" fill="#E8C96D"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(-45 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(0 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(45 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(90 36 36)" opacity="0.7"/>
+    <circle cx="36" cy="36" r="4" fill="#C9942A" opacity="0.55"/>
+    <path d="M65 8 Q80 25 65 42 Q82 30 88 12" stroke="#E8C96D" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <path d="M8 65 Q25 80 42 65 Q30 82 12 88" stroke="#E8C96D" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <polygon points="55,18 60,24 55,30 50,24" fill="#C9942A" opacity="0.4"/>
+    <polygon points="18,55 24,60 18,65 12,60" fill="#C9942A" opacity="0.4"/>
+    <circle cx="90" cy="12" r="2.5" fill="#E8C96D" opacity="0.45"/>
+    <circle cx="12" cy="90" r="2.5" fill="#E8C96D" opacity="0.45"/>
+  </svg>
+  <svg class="alpona bl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 L200 0 L200 9 Q100 22 0 9Z" fill="#E8C96D"/>
+    <path d="M0 0 L0 200 L9 200 Q22 100 9 0Z" fill="#E8C96D"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(-45 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(45 36 36)" opacity="0.7"/>
+    <circle cx="36" cy="36" r="4" fill="#C9942A" opacity="0.55"/>
+    <polygon points="55,18 60,24 55,30 50,24" fill="#C9942A" opacity="0.4"/>
+    <polygon points="18,55 24,60 18,65 12,60" fill="#C9942A" opacity="0.4"/>
+    <circle cx="90" cy="12" r="2.5" fill="#E8C96D" opacity="0.45"/>
+    <circle cx="12" cy="90" r="2.5" fill="#E8C96D" opacity="0.45"/>
+  </svg>
+  <svg class="alpona br" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 L200 0 L200 9 Q100 22 0 9Z" fill="#E8C96D"/>
+    <path d="M0 0 L0 200 L9 200 Q22 100 9 0Z" fill="#E8C96D"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(-45 36 36)" opacity="0.7"/>
+    <ellipse cx="36" cy="36" rx="14" ry="6" stroke="#C9942A" stroke-width="1" fill="none" transform="rotate(45 36 36)" opacity="0.7"/>
+    <circle cx="36" cy="36" r="4" fill="#C9942A" opacity="0.55"/>
+    <polygon points="55,18 60,24 55,30 50,24" fill="#C9942A" opacity="0.4"/>
+    <polygon points="18,55 24,60 18,65 12,60" fill="#C9942A" opacity="0.4"/>
+    <circle cx="90" cy="12" r="2.5" fill="#E8C96D" opacity="0.45"/>
+    <circle cx="12" cy="90" r="2.5" fill="#E8C96D" opacity="0.45"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="shankha-divider">
+      <div class="line"></div>
+      <div class="sym">☽ ✦ ☾</div>
+      <div class="line"></div>
+    </div>
+    <p class="eyebrow">Paka Katha · Aashirbaad — পাকা কথা · আশীর্বাদ</p>
+    <h1 class="hero-names">
+      <em>Tanmoy</em>
+      <span class="amp">&amp;</span>
+      <em>Aparna</em>
+    </h1>
+    <p class="hero-bengali">তন্ময় ও অপর্ণার পাকা কথা ও আশীর্বাদ অনুষ্ঠান</p>
+
+    <div class="hero-badges">
+      <div class="badge">
+        Registry Marriage Applied<br>
+        <strong>18 June 2026</strong>
+      </div>
+      <div class="badge" style="font-size:1.3rem; border: none; color: rgba(232,201,109,0.4);">✦</div>
+      <div class="badge">
+        Paka Katha Ceremony<br>
+        <strong>পাকা কথা · Kolkata</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STORY
+═══════════════════════════════════════════ -->
+<div style="background: var(--cream);">
+<div class="section">
+  <p class="section-label">Their beginning</p>
+  <h2 class="section-title">One auspicious day in June</h2>
+  <p class="section-bengali">এক শুভ দিনে — জুন ২০২৬</p>
+  <div class="gold-rule"></div>
+  <div class="story-grid">
+    <div class="story-text">
+      <p>
+        On the 18th of June 2026, under the blessings of the elders and the watchful eyes of the stars, Tanmoy and Aparna took their first formal steps toward a shared life. The day was marked by two milestones woven into one — the filing of their Registry Marriage and the sacred Bengali ritual of <em>Paka Katha</em>, the confirmation of the match.
+      </p>
+      <div class="bengali-verse">
+        আমার সোনার বাংলা, আমি তোমায় ভালোবাসি।<br>
+        দুই হাতে দুটি প্রাণ বেঁধে নিল ভালোবাসি।
+      </div>
+      <p>
+        Surrounded by the fragrance of marigolds and sandalwood, the warmth of family, and the gentle sound of conch shells, this day will forever be etched as the beginning of Tanmoy and Aparna's eternal journey together.
+      </p>
+    </div>
+    <div class="story-motif">
+      <svg class="motif-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="110" cy="110" r="100" stroke="#C9942A" stroke-width="0.7" stroke-dasharray="5 7" opacity="0.35"/>
+        <circle cx="110" cy="110" r="86" stroke="#C9942A" stroke-width="0.4" opacity="0.2"/>
+        <g opacity="0.72">
+          <ellipse cx="110" cy="66" rx="11" ry="24" fill="#C0392B" fill-opacity="0.22" stroke="#C9942A" stroke-width="0.9"/>
+          <ellipse cx="110" cy="154" rx="11" ry="24" fill="#C0392B" fill-opacity="0.22" stroke="#C9942A" stroke-width="0.9"/>
+          <ellipse cx="66" cy="110" rx="24" ry="11" fill="#C0392B" fill-opacity="0.22" stroke="#C9942A" stroke-width="0.9"/>
+          <ellipse cx="154" cy="110" rx="24" ry="11" fill="#C0392B" fill-opacity="0.22" stroke="#C9942A" stroke-width="0.9"/>
+          <ellipse cx="78" cy="78" rx="11" ry="24" fill="#C0392B" fill-opacity="0.18" stroke="#C9942A" stroke-width="0.75" transform="rotate(-45 78 78)"/>
+          <ellipse cx="142" cy="78" rx="11" ry="24" fill="#C0392B" fill-opacity="0.18" stroke="#C9942A" stroke-width="0.75" transform="rotate(45 142 78)"/>
+          <ellipse cx="78" cy="142" rx="11" ry="24" fill="#C0392B" fill-opacity="0.18" stroke="#C9942A" stroke-width="0.75" transform="rotate(45 78 142)"/>
+          <ellipse cx="142" cy="142" rx="11" ry="24" fill="#C0392B" fill-opacity="0.18" stroke="#C9942A" stroke-width="0.75" transform="rotate(-45 142 142)"/>
+        </g>
+        <circle cx="110" cy="110" r="22" fill="#8B1A1A" fill-opacity="0.18" stroke="#C9942A" stroke-width="1.1"/>
+        <circle cx="110" cy="110" r="9" fill="#C9942A" opacity="0.5"/>
+        <polygon points="110,22 114,30 110,38 106,30" fill="#C9942A" opacity="0.55"/>
+        <polygon points="110,182 114,190 110,198 106,190" fill="#C9942A" opacity="0.55"/>
+        <polygon points="22,110 30,114 38,110 30,106" fill="#C9942A" opacity="0.55"/>
+        <polygon points="182,110 190,114 198,110 190,106" fill="#C9942A" opacity="0.55"/>
+        <text x="110" y="113" text-anchor="middle" font-family="'Tiro Bangla',serif" font-size="9.5" fill="#C9942A" opacity="0.65">শুভ লগ্ন</text>
+      </svg>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAKA KATHA HIGHLIGHTS
+═══════════════════════════════════════════ -->
+<div class="paka-katha-band">
+  <p class="pk-eyebrow">18 June 2026 — What happened this day</p>
+  <h2>A Day of Two Sacred Milestones</h2>
+  <p class="pk-bengali">দুটি পবিত্র ঘটনার দিন</p>
+  <div class="pk-cards">
+    <div class="pk-card">
+      <div class="pk-icon">📜</div>
+      <h4>Registry Marriage</h4>
+      <p class="pk-sub">বিবাহ নিবন্ধন</p>
+      <p>Tanmoy &amp; Aparna formally applied for Registry Marriage — their union recognised by civil law.</p>
+    </div>
+    <div class="pk-card">
+      <div class="pk-icon">🌺</div>
+      <h4>Paka Katha</h4>
+      <p class="pk-sub">পাকা কথা</p>
+      <p>The formal confirmation of the match by both families, sealed with sweets, blessings and the exchange of words of commitment.</p>
+    </div>
+    <div class="pk-card">
+      <div class="pk-icon">🐚</div>
+      <h4>Aashirbaad</h4>
+      <p class="pk-sub">আশীর্বাদ</p>
+      <p>Elders placed their hands upon the couple and blessed them with long life, prosperity and an unbroken bond of love.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     BENGALI RITUALS TIMELINE
+═══════════════════════════════════════════ -->
+<div class="tl-wrap">
+<div class="section">
+  <p class="section-label">Bengali Wedding Rituals</p>
+  <h2 class="section-title">The sacred traditions ahead</h2>
+  <p class="section-bengali">সামনের পবিত্র আচার-অনুষ্ঠান</p>
+  <div class="gold-rule"></div>
+  <div class="timeline tl-current">
+    <div class="timeline-item active">
+      <h4>Paka Katha &amp; Aashirbaad — পাকা কথা ও আশীর্বাদ ✦ <span style="font-size:0.75rem; color:var(--sindoor);">Completed · 18 June 2026</span></h4>
+      <p class="tl-bengali">আজকের অনুষ্ঠান</p>
+      <p>The formal confirmation of the match and the blessing ceremony. The groom's family visits with gifts — mishti, fish, new sarees — and both families exchange words of commitment. Registry Marriage application submitted on this day.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Aiburobhaat — আইবুড়োভাত</h4>
+      <p class="tl-bengali">বিবাহের আগের ভোজ</p>
+      <p>The last meal bride and groom share as unmarried individuals, lovingly cooked and served by their own families. A bittersweet farewell to their previous lives, celebrated with joy.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Gaye Holud — গায়ে হলুদ</h4>
+      <p class="tl-bengali">হলুদের অনুষ্ঠান</p>
+      <p>Turmeric paste mixed with mustard oil and herbs is applied by family members. The golden hue of haldi blesses the couple with radiance and wards off evil before the wedding day.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Shubho Drishti — শুভদৃষ্টি</h4>
+      <p class="tl-bengali">প্রথম শুভ দর্শন</p>
+      <p>The auspicious first look — the bride is carried on a wooden seat by her brothers. She and the groom gaze into each other's eyes through seven betel leaves, the moment filling the air with ululation.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Mala Badal — মালাবদল</h4>
+      <p class="tl-bengali">ফুলের মালা বিনিময়</p>
+      <p>The exchange of flower garlands three times, symbolizing mutual acceptance. The bride is lifted three times by the groom's sisters amid laughter and the fragrance of tuberose.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Sindoor Daan — সিঁদুরদান</h4>
+      <p class="tl-bengali">সিঁদুর পরানো</p>
+      <p>The most sacred moment — the groom applies vermilion to the bride's parting, completing the rites and marking the beginning of their life as husband and wife.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════ -->
+<section class="gallery-section">
+  <div class="gallery-inner">
+    <p class="section-label">Our memories</p>
+    <h2 class="section-title" style="color:var(--gold-pale);">Ceremony Gallery</h2>
+    <p class="section-bengali">আমাদের স্মৃতি — অনুষ্ঠানের ছবি</p>
+    <div class="gold-rule"></div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-empty" id="galleryEmpty">
+        <div style="font-size:2rem; margin-bottom:0.8rem; opacity:0.4;">🌸</div>
+        <div>Loading ceremony photos…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <p class="footer-names">Tanmoy &amp; Aparna</p>
+  <p class="footer-bengali">তন্ময় ও অপর্ণা</p>
+  <p>18 June 2026 · Paka Katha &amp; Aashirbaad</p>
+  <p style="margin-top:0.3rem;">শুভ আশীর্বাদ · With love from both families</p>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     MUSIC BAR
+═══════════════════════════════════════════ -->
+<div class="music-bar">
+  <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+  <div class="music-info">
+    <div class="music-title" id="musicTitle">Loading song…</div>
+    <div class="music-sub" id="musicSub">Background music</div>
+  </div>
+  <div class="music-progress"><div class="music-progress-fill" id="progressFill"></div></div>
+  <audio id="bgAudio" loop></audio>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     LIGHTBOX
+═══════════════════════════════════════════ -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-nav prev" onclick="lbNav(-1)">&#8249;</button>
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt="Ceremony photo">
+  </div>
+  <button class="lb-nav next" onclick="lbNav(1)">&#8250;</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPT
+═══════════════════════════════════════════ -->
+<script>
+// ─────────────────────────────────────────────────────────
+//  CONFIGURATION — Edit these lists before pushing to GitHub
+// ─────────────────────────────────────────────────────────
+
+// Add your image filenames here (place files in the /images/ folder)
+const IMAGE_FILES = [
+  "images/photo1.jpg",
+  "images/photo2.jpg",
+  "images/photo3.jpg",
+  "images/photo4.jpg",
+  "images/photo5.jpg",
+  "images/photo6.jpg",
+  "images/photo7.jpg",
+  "images/photo8.jpg"
+  // Add more: "images/photo9.jpg", "images/photo10.jpg" …
+];
+
+// Your song filename (place file in the /music/ folder)
+const MUSIC_FILE = "music/song.mp3";
+const MUSIC_DISPLAY_NAME = "Aaj Amar Mon Bhalo Nei";  // ← change to your song name
+
+// ─────────────────────────────────────────────────────────
+//  GALLERY
+// ─────────────────────────────────────────────────────────
+let loadedImages = [];
+let lbIndex = 0;
+
+function buildGallery() {
+  const grid = document.getElementById("galleryGrid");
+  const empty = document.getElementById("galleryEmpty");
+  const validImages = [];
+
+  // Check which images actually exist by trying to load each
+  let checked = 0;
+  IMAGE_FILES.forEach((src, i) => {
+    const probe = new Image();
+    probe.onload = () => {
+      validImages[i] = src;
+      checked++;
+      if (checked === IMAGE_FILES.length) renderGallery(validImages.filter(Boolean));
+    };
+    probe.onerror = () => {
+      checked++;
+      if (checked === IMAGE_FILES.length) renderGallery(validImages.filter(Boolean));
+    };
+    probe.src = src;
+  });
+
+  // Fallback timeout in case some requests hang
+  setTimeout(() => {
+    if (loadedImages.length === 0) renderGallery(validImages.filter(Boolean));
+  }, 4000);
+}
+
+function renderGallery(images) {
+  const grid = document.getElementById("galleryGrid");
+  const empty = document.getElementById("galleryEmpty");
+  loadedImages = images;
+
+  if (images.length === 0) {
+    empty.innerHTML = `
+      <div style="font-size:2rem; margin-bottom:0.8rem; opacity:0.35;">📷</div>
+      <div>Add your photos to the <strong style="color:rgba(201,148,42,0.6)">images/</strong> folder and list them in IMAGE_FILES</div>
+    `;
+    return;
+  }
+
+  empty.remove();
+  images.forEach((src, idx) => {
+    const card = document.createElement("div");
+    card.className = "gallery-card loading";
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `Ceremony photo ${idx + 1}`;
+    img.loading = "lazy";
+    img.onload = () => card.classList.remove("loading");
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+    overlay.innerHTML = `<span>Photo ${idx + 1} of ${images.length}</span>`;
+    card.appendChild(img);
+    card.appendChild(overlay);
+    card.addEventListener("click", () => openLightbox(idx));
+    grid.appendChild(card);
+  });
+}
+
+// ─────────────────────────────────────────────────────────
+//  LIGHTBOX
+// ─────────────────────────────────────────────────────────
+function openLightbox(idx) {
+  lbIndex = idx;
+  updateLbImage();
+  document.getElementById("lightbox").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("open");
+  document.body.style.overflow = "";
+}
+function updateLbImage() {
+  const img = document.getElementById("lbImg");
+  img.classList.add("fading");
+  setTimeout(() => {
+    img.src = loadedImages[lbIndex];
+    img.classList.remove("fading");
+  }, 180);
+  document.getElementById("lbCounter").textContent =
+    (lbIndex + 1) + " / " + loadedImages.length;
+}
+function lbNav(dir) {
+  lbIndex = (lbIndex + dir + loadedImages.length) % loadedImages.length;
+  updateLbImage();
+}
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (!document.getElementById("lightbox").classList.contains("open")) return;
+  if (e.key === "Escape")      closeLightbox();
+  if (e.key === "ArrowRight")  lbNav(1);
+  if (e.key === "ArrowLeft")   lbNav(-1);
+});
+
+// ─────────────────────────────────────────────────────────
+//  MUSIC
+// ─────────────────────────────────────────────────────────
+const audio = document.getElementById("bgAudio");
+const playBtn = document.getElementById("playBtn");
+let musicReady = false;
+
+function initMusic() {
+  audio.src = MUSIC_FILE;
+  audio.volume = 0.42;
+  document.getElementById("musicTitle").textContent = MUSIC_DISPLAY_NAME;
+
+  audio.addEventListener("canplaythrough", () => {
+    musicReady = true;
+    document.getElementById("musicSub").textContent = "Click ▶ to play";
+  });
+  audio.addEventListener("error", () => {
+    document.getElementById("musicTitle").textContent = "Song not found";
+    document.getElementById("musicSub").textContent =
+      "Add your .mp3 to music/ and update MUSIC_FILE";
+  });
+  audio.addEventListener("timeupdate", () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      document.getElementById("progressFill").style.width = pct + "%";
+    }
+  });
+  audio.load();
+}
+
+function togglePlay() {
+  if (!musicReady) { audio.load(); return; }
+  if (audio.paused) {
+    audio.play();
+    playBtn.textContent = "⏸";
+    document.getElementById("musicSub").textContent = "Now playing · loop";
+  } else {
+    audio.pause();
+    playBtn.textContent = "▶";
+    document.getElementById("musicSub").textContent = "Paused";
+  }
+}
+
+// Auto-play on first user interaction (browser policy requires user gesture)
+function attemptAutoplay() {
+  if (!musicReady) return;
+  audio.play().then(() => {
+    playBtn.textContent = "⏸";
+    document.getElementById("musicSub").textContent = "Now playing · loop";
+    document.removeEventListener("click", attemptAutoplay);
+    document.removeEventListener("keydown", attemptAutoplay);
+  }).catch(() => {});
+}
+document.addEventListener("click", attemptAutoplay);
+document.addEventListener("keydown", attemptAutoplay);
+
+// ─────────────────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────────────────
+buildGallery();
+initMusic();
+</script>
+</body>
+</html>
